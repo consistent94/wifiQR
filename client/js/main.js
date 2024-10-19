@@ -18,7 +18,17 @@ document.getElementById('qrForm').addEventListener('submit', function (event) {
         return response.text(); 
     })
     .then(svg => {
-        document.getElementById('qrResult').innerHTML = svg;
+        const qrContainer = document.getElementById('qrCodeContainer');
+        qrContainer.innerHTML = svg; // Insert SVG into the inner container
+
+        // Resize the SVG
+        const svgElement = qrContainer.querySelector('svg');
+        if (svgElement) {
+            svgElement.setAttribute('width', '150');  // Set the width to 150px
+            svgElement.setAttribute('height', '150'); // Set the height to 150px
+            svgElement.style.width = '100%'; // Ensure it scales within the container
+            svgElement.style.height = '100%'; // Ensure it scales within the container
+        }
     })
     .catch(error => {
         console.error('Error:', error);

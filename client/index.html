@@ -4,23 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WiFi QR Code Generator</title>
-    <!-- <link rel="stylesheet" href="css/styles.css"> -->
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <h1>WiFi QR Code Generator</h1>
+<body class="bg-gray-100 py-10 px-4">
+    <h1 class="text-3xl font-bold text-center mb-8">WiFi QR Code Generator</h1>
     
-    <form id="qrForm">
-        <label for="ssid">SSID:</label>
-        <input type="text" id="ssid" name="ssid" required>
+    <form id="qrForm" class="bg-white p-6 rounded shadow-md mx-auto w-full max-w-sm">
+        <div class="mb-4">
+            <label for="ssid" class="block text-sm font-medium text-gray-700">SSID:</label>
+            <input type="text" id="ssid" name="ssid" required class="mt-1 block w-full p-2 border border-gray-300 rounded-md">
+        </div>
         
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required>
+        <div class="mb-4">
+            <label for="password" class="block text-sm font-medium text-gray-700">Password:</label>
+            <input type="password" id="password" name="password" required class="mt-1 block w-full p-2 border border-gray-300 rounded-md">
+        </div>
         
-        <button type="submit">Generate QR Code</button>
+        <button type="submit" class="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600">Generate QR Code</button>
     </form>
     
-    <div id="qrResult">
+    <div id="qrResult" class="mt-8 flex justify-center">
         <!-- The generated QR code will be displayed here -->
+        <div id="qrCodeContainer" class="w-32 h-32"> <!-- Inner container for sizing -->
+            <!-- QR code will go here -->
+        </div>
     </div>
 
     <script src="js/main.js"></script>
