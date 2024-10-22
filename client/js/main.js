@@ -19,16 +19,18 @@ document.getElementById('qrForm').addEventListener('submit', function (event) {
     })
     .then(svg => {
         const qrContainer = document.getElementById('qrCodeContainer');
-        qrContainer.innerHTML = svg; // Insert SVG into the inner container
+        qrContainer.innerHTML = svg; 
 
         // Resize the SVG
         const svgElement = qrContainer.querySelector('svg');
         if (svgElement) {
-            svgElement.setAttribute('width', '150');  // Set the width to 150px
-            svgElement.setAttribute('height', '150'); // Set the height to 150px
-            svgElement.style.width = '100%'; // Ensure it scales within the container
-            svgElement.style.height = '100%'; // Ensure it scales within the container
+            svgElement.setAttribute('width', '150');  
+            svgElement.setAttribute('height', '150'); 
+            svgElement.style.width = '100%'; 
+            svgElement.style.height = '100%'; 
         }
+
+        exportBtn.classList.remove('hidden');  
     })
     .catch(error => {
         console.error('Error:', error);
