@@ -1,4 +1,5 @@
 const exportBtn = document.getElementById('exportBtn');
+const qrResult = document.getElementById('qrResult');
 
 document.getElementById('qrForm').addEventListener('submit', function (event) {
     event.preventDefault();
@@ -33,6 +34,7 @@ document.getElementById('qrForm').addEventListener('submit', function (event) {
         }
 
         exportBtn.classList.remove('hidden');  
+        qrResult.classList.remove('hidden');
     })
     .catch(error => {
         console.error('Error:', error);
